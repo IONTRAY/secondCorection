@@ -72,7 +72,8 @@ app.post ('/index',async (req, res)=>{
 })
 
 app.get('/indexx', (req,res)=>{
-    res.sendFile(__dirname + '/public/indexx.html')
+    res.setHeader("Access-Control-Allow-Credentials","true")
+    res.sendFile(path.join(__dirname + '../frontendjus/indexx.html'))
 })
 
 app.post ('/indexx',async (req, res)=>{
@@ -112,7 +113,8 @@ app.post ('/indexx',async (req, res)=>{
 })
 
 app.get('/indexcc', (req,res)=>{
-    res.sendFile(__dirname + '/public/indexcc.html')
+    res.setHeader("Access-Control-Allow-Credentials","true")
+    res.sendFile(path.join(__dirname + '../frontendjus/indexcc.html'))
 })
 
 app.post ('/indexcc',async (req, res)=>{
@@ -146,7 +148,8 @@ app.post ('/indexcc',async (req, res)=>{
 })
 
 app.get('/indexsq', (req,res)=>{
-    res.sendFile(__dirname + '/public/indexsq.html')
+    res.setHeader("Access-Control-Allow-Credentials","true")
+    res.sendFile(path.join(__dirname + '../frontendjus/index.html'))
 })
 
 app.post ('/indexsq',async (req, res)=>{
