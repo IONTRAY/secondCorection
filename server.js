@@ -149,7 +149,7 @@ app.post ('/indexcc',async (req, res)=>{
 
 app.get('/indexsq', (req,res)=>{
     res.setHeader("Access-Control-Allow-Credentials","true")
-    res.sendFile(path.join(__dirname + '../frontendjus/index.html'))
+    res.sendFile(path.join(__dirname + '../frontendjus/indexsq.html'))
 })
 
 app.post ('/indexsq',async (req, res)=>{
