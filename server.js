@@ -1,6 +1,7 @@
 const express = require("express");
 const session = require('express-session')
 const app = express();
+const path = require('path');
 const requestIp = require('request-ip');
 const crypto = require('crypto');
 const cors = require('cors');
@@ -16,10 +17,10 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-app.use(express.static('public')); 
+app.use(express.static(path.join(--dirname, '../frontendjus'))); 
 app.use(express.json());
 app.use(cors({
-    origin: '/',
+    origin: 'https://frontendjust.onrender.com',
     credentials: true 
 }));
 app.use(requestIp.mw());
@@ -31,10 +32,10 @@ app.listen(PORT, ()=>{
 
 app.get('/', (req, res)=>{
      res.setHeader("Access-Control-Allow-Credentials","true")
-    res.sendFile(__dirname + '/public/index.html')
+    res.sendFile(path.join(__dirname + '../frontendjus/index.html'))
 })
 
-app.post ('/',async (req, res)=>{
+app.post ('/index',async (req, res)=>{
     // const ipAdress = req.socket.remoteAddress;
     const ipAddress = req.clientIp;
     if (typeof ipAddress !== 'string') {
