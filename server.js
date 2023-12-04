@@ -17,7 +17,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-app.use(express.static(path.join(--dirname, '../frontendjus'))); 
+app.use(express.static(path.join(__dirname, '../frontendjus'))); 
 app.use(express.json());
 app.use(cors({
     origin: 'https://frontendjust.onrender.com',
